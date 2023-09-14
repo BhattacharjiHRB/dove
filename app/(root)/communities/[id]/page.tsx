@@ -1,5 +1,4 @@
 "use client"
-
 import { currentUser } from "@clerk/nextjs";
 import ProfileHeader from "@/components/shared/ProfileHeader"
 import { Tabs, TabsTrigger } from "@/components/ui/tabs";
