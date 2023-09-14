@@ -213,7 +213,7 @@ export async function deleteDovePost(id:string, path:string): Promise<void>{
                 mainDovepost.author?._id?.toString(),
             ].filter((id) => id !== undefined)
         )
-        await DovePost.deleteMany({id: {$in: descendentDovepostIds}});
+        await DovePost.deleteOne({id: {$in: descendentDovepostIds}});
 
         await User.updateMany(
             {_id: { $in: Array.from(uniqueAuthorId)}},

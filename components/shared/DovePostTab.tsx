@@ -53,24 +53,26 @@ const DovePostTab = async({currentUserId , accountId , accountType}:Props) => {
     
     return(
         <section className="mt-10 flex flex-col gap-5">
-            {result.dovepost.map((dovepost:any) => (
+            {result.dovepost.map((dovePost:any) => (
                 <DovePostCard 
-                  key={dovepost._id}
-                  id={dovepost._id}
+                  key={dovePost._id}
+                  id={dovePost._id}
                   currentUserId={user.id}
-                  parentId={dovepost.parentId}
-                  content={dovepost.text}
+                  parentId={dovePost.parentId}
+                  content={dovePost.text}
                   author={
                     accountType === 'User'?{
                       name:result.name , id:result.id, image:result.image
-                    }:{name: dovepost.author.name, image: dovepost.author.image, id: dovepost.auhor.id}
+                    }:{name: dovePost.author.name, image: dovePost.author.image, id: dovePost.auhor.id}
                   }
-                  community=
-                  { accountType === 'Community'?{
-                    name: result.name, id: result.id , image: result.image
-                  }: dovepost.community }
-                  createdAt={dovepost.createdAt}
-                  comments={dovepost.children} 
+                  community={ 
+
+                        accountType === 'Community'?{
+                        name: result.name, id: result.id, image: result.image
+                      }: dovePost.community 
+                    }
+                  createdAt={dovePost.createdAt}
+                  comments={dovePost.children} 
                 />
             ))}
         </section>

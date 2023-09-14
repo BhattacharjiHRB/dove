@@ -90,8 +90,9 @@ export async function fetchUserPosts(userId:string){
         console.log(`FetchUserByPosts is not working ${err.message}`);
         throw err;
     }
-}
 
+}
+console.log("FetchUserByPosts is working", fetchUserPosts)
 export async function fetchUsers({ 
     userId,
     searchString="",

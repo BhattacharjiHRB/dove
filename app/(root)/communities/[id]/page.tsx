@@ -1,7 +1,6 @@
-
+"use client"
 
 import { currentUser } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
 import ProfileHeader from "@/components/shared/ProfileHeader"
 import { Tabs, TabsTrigger } from "@/components/ui/tabs";
 import { TabsContent, TabsList } from "@radix-ui/react-tabs";
