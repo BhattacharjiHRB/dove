@@ -1,8 +1,7 @@
 "use client"
 import { currentUser } from "@clerk/nextjs";
 import ProfileHeader from "@/components/shared/ProfileHeader"
-import { Tabs, TabsTrigger } from "@/components/ui/tabs";
-import { TabsContent, TabsList } from "@radix-ui/react-tabs";
+import { Tabs, TabsTrigger, TabsContent, TabsList } from "@/components/ui/tabs";
 import { communityTabs } from "@/constants";
 import Image from "next/image";
 import DovePostTab from "@/components/shared/DovePostTab";
