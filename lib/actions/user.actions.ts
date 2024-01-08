@@ -5,8 +5,7 @@ import User from "../models/user.model"
 import { revalidatePath } from "next/cache";
 import DovePost from "../models/dovepost.models";
 import { FilterQuery, SortOrder } from "mongoose";
-import Community from "../models/community.model";
- 
+
 interface Params{
     userId: string,
     username: string,
@@ -92,7 +91,7 @@ export async function fetchUserPosts(userId:string){
     }
 
 }
-console.log("FetchUserByPosts is working", fetchUserPosts)
+
 export async function fetchUsers({ 
     userId,
     searchString="",

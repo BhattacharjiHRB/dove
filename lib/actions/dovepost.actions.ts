@@ -177,9 +177,9 @@ export async function addCommentToDovepost(
     }
 
 
-    async function fetchAllChildDovepost(dovepostId:string): Promise<any>{
+async function fetchAllChildDovepost(dovePostId:string): Promise<any>{
     
-    const childDovePosts = await DovePost.find({parentId:dovepostId})
+    const childDovePosts = await DovePost.find({parentId:dovePostId})
     const descendentDovepost = []
 
     for(const childDovePost of childDovePosts) {
@@ -191,14 +191,13 @@ export async function addCommentToDovepost(
 
 
 
-
 export async function deleteDovePost(id:string, path:string): Promise<void>{
     try {
         connect();
 
         const mainDovepost = await DovePost.findById(id).populate("author community");
         if(!mainDovepost){
-            throw new Error("DovePost not found")
+            console.log("DovePost not found")
         }
 
         const descendentDovepost = await fetchAllChildDovepost(id)

@@ -67,7 +67,7 @@ const AccountProfile = ({user, btnTitle}:Props) => {
 
             setFiles(Array.from(e.target.files))
 
-            if(!file.type.includes('image')) return;
+            if(!file.type.includes('image')) return null;
 
             fileReader.onload = async (event) =>{
                 const imageDataUrl = event.target?.result?.toString() || "";
